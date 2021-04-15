@@ -57,12 +57,18 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
-              useRelativePath: true,
-              name: '[name].[ext]',
+              limit: 8192, // in bytes
             },
           },
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //     useRelativePath: true,
+          //     name: '[name].[ext]',
+          //   },
+          // },
         ],
       },
     ],
