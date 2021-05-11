@@ -4,9 +4,9 @@ import './style.scss';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 
-import reducers from './reducers';
+import reducers from './store/reducers';
 
-import App from './components/app';
+import App from './App';
 
 // this creates the store with the reducers, and does some other stuff to initialize devtools
 // boilerplate to copy, don't have to know

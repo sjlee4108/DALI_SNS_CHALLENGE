@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import { increment, decrement } from '../actions';
+import { increment, decrement } from '../store/actions';
 
 const Controls = (props) => (
   <div>

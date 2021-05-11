@@ -1,0 +1,68 @@
+#backgroundContainer{
+  width:100%;
+  background: url(http://www.dartmouth.edu/~alfund/images/2015/8/1600.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  filter: grayscale(40%);
+  animation: backgroundChange 15s infinite;
+}
+
+@keyframes backgroundChange{
+  0%{
+    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/8/1600.jpg); 
+  }
+
+  25%{
+    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/12/1600.jpg);
+  }
+  50%{
+    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/9/1600.jpg); 
+  }
+
+  75%{
+    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/1/1600.jpg); 
+  }
+
+}
+
+
+#topContainer{
+  display: flex;
+  width:100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #597167b0;
+  height: 100%;
+}
+
+
+
+#featuresContainer{
+  display: flex;
+  flex-direction: column;
+  height: 4em;
+  justify-content: space-between;
+}
+
+.feature{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  span{
+    margin-left: 1em;
+  }
+}
+
+#welcomeContainer{
+  width:28em;
+  height:26em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  padding: 0em 1em 1em 1em;
+  color:rgb(207, 229, 217);
+  font-size: 1.1em;
+}
