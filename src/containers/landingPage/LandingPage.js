@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckIcon from '@material-ui/icons/Check';
 
-import NewAccount from '../../components/NewAccount';
+import NewAccount from '../../components/newAccount/NewAccount';
 import './LandingPageStyles.scss';
 
 const getWelcomeSection = () => (

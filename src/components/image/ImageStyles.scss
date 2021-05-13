@@ -1,0 +1,33 @@
+
+
+.postImage{
+  width: 100%;
+  object-fit: contain;
+  
+}
+
+
+.sliderImage{
+  width: 100%;
+  height:30em;
+  object-fit: contain;
+  
+}
+
+.sliderContainer{
+  width:100%;
+  height:30em;
+
+  li{
+    justify-content: center;
+    display: flex;
+    background-color: black;
+  }
+
+  p{
+    width:fit-content;
+    background-color:black;
+    border-radius: 1em;
+    margin-right: 1em;
+  }
+}

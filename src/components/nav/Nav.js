@@ -3,6 +3,8 @@ import {
   BrowserRouter as NavLink,
 } from 'react-router-dom';
 
+import './NavStyles.scss';
+
 const Nav = () => (
   <nav>
     <ul>

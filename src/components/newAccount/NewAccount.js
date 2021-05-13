@@ -6,6 +6,7 @@ import {
   KeyboardDatePicker, MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import './NewAccountStyles.scss';
 
 // import { connect } from 'react-redux';
 // import { withRouter } from 'react-router-dom';

@@ -1,0 +1,24 @@
+#form{
+  width:22em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border : solid  #00703c .1em;
+  border-radius: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+  margin: 2em;
+  background-color: rgba(245, 245, 245, 0.804);
+
+}
+
+#formTop{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding: 0em 1em;
+}
+

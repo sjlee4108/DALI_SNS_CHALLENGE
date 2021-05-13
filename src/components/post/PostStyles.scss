@@ -1,0 +1,45 @@
+#postContainer{
+  width:30em;
+  box-sizing: border-box;
+  background-color: white;
+  display:flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: lightgray 0.1em solid;
+  border-radius: 0.3em;
+  margin-bottom: 2.5em;
+}
+
+#userInfo{
+  display: flex;
+  align-items: center;
+  margin:0.5em 1em;
+}
+
+#userDescription{
+  display: flex;
+  flex-direction: column;
+  margin-left:0.6em;
+  #name{
+    padding:0.5em 0em 0.2em 0em;
+    font-size:0.85em;
+    font-weight: 600;
+  }
+  #subSection{
+    font-size:0.65em;
+    color:lightgray
+  }
+}
+
+p{
+  width:100%;
+  box-sizing: border-box;
+  padding: 1em; 
+  margin: 1em 0em;
+  font-size:  0.85em;
+}
+
+#tagsContainer{
+  margin: 0em 1em 1em 1em;
+}

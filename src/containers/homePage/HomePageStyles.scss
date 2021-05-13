@@ -1,68 +1,60 @@
-#backgroundContainer{
-  width:100%;
-  background: url(http://www.dartmouth.edu/~alfund/images/2015/8/1600.jpg) no-repeat center center fixed; 
-  background-size: cover;
-  filter: grayscale(40%);
-  animation: backgroundChange 15s infinite;
-}
-
-@keyframes backgroundChange{
-  0%{
-    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/8/1600.jpg); 
-  }
-
-  25%{
-    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/12/1600.jpg);
-  }
-  50%{
-    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/9/1600.jpg); 
-  }
-
-  75%{
-    background-image: url(http://www.dartmouth.edu/~alfund/images/2015/1/1600.jpg); 
-  }
-
-}
 
 
-#topContainer{
+#topLevelContainer{
   display: flex;
   width:100%;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background-color: #597167b0;
-  height: 100%;
-}
-
-
-
-#featuresContainer{
-  display: flex;
-  flex-direction: column;
-  height: 4em;
-  justify-content: space-between;
-}
-
-.feature{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  span{
-    margin-left: 1em;
-  }
-}
-
-#welcomeContainer{
-  width:28em;
-  height:26em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height:100%;
+  overflow-y: scroll;
   box-sizing: border-box;
-  padding: 0em 1em 1em 1em;
-  color:rgb(207, 229, 217);
-  font-size: 1.1em;
+  padding-top: 1em;
+  background-color: rgb(237, 237, 237);
+  padding-bottom: 2em;
+
+}
+
+
+
+#postSectionContainer{
+  display: flex;
+  flex-direction: column;
+  width:calc(100% - 19em);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+#friendsContainer{
+  display: flex;
+  flex-direction: column;
+  position:fixed;
+  width: 19em;
+  left: calc(50% + 8em);
+  padding-top: 2em
+}
+
+
+@media only screen and (max-width: 860px) {
+  #friendsContainer {
+     width: 0;
+     visibility: hidden;
+     
+  }
+
+  #postSectionContainer{
+    width: 100%;
+  }
+}
+
+#friendDivider{
+  width:88%;
+  margin:3em auto 1.5em auto;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }

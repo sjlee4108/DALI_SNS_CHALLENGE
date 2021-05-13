@@ -1,0 +1,26 @@
+#UserDisplayContainer{
+  display: flex;
+  flex-direction: row;
+  padding:0.5em 0em;
+  border-radius: 0.5em;
+}
+
+#UserDisplayContainer:hover{
+  background-color: #dcdcdc;
+  cursor: pointer;
+}
+
+#nameImageSection{
+  align-items: center;
+  display: flex;
+  flex-direction:column;
+  font-weight: 700;
+  width: 6em;
+}
+
+#userDisplayname{
+  margin-top: 0.6em;
+  font-size: 0.7em;
+  text-align: center;
+
+}

@@ -1,0 +1,65 @@
+#newPostContainer{
+  width:30em;
+  box-sizing: border-box;
+  background-color: white;
+  display:flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: lightgray 0.1em solid;
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  h4{
+    margin: 0.35em 0em;
+  }
+}
+
+
+#urlTextContainer{
+  width:19em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#textFieldContainer{
+  width: 16em;
+}
+
+
+#urlAdder{
+  width:7em;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5em auto 0.5em 0.5em;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  color:#006633;
+}
+
+#buttonColor{
+  color:#006633;
+  display: flex;
+  align-items: center;
+}
+
+#buttonColor:hover, #urlAdder:hover{
+  color:#139755;
+  cursor: pointer;
+}
+
+#buttonColor:active, #urlAdder:active{
+  color:#00552b;
+}
+#bottomSection{
+  width:100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0.3em 0em;
+}
