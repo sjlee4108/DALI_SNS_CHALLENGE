@@ -1,5 +1,5 @@
 import {
-  Button, FormControl, IconButton, InputLabel, makeStyles, MenuItem, TextField, withStyles,
+  Button, FormControl, IconButton, makeStyles, MenuItem, TextField, withStyles,
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';

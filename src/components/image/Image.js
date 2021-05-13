@@ -7,7 +7,6 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a lo
 
 const getImages = (imgurls) => imgurls.map((url) => (<div id="ImageContainer"><img src={url} alt="" /></div>));
 const Image = (props) => {
-  console.log(props);
   if (props.usage === 'profile') {
     return (
       <Avatar size={props.size ? props.size : '40'} src={props.src} name={props.alt} round />

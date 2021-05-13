@@ -6,17 +6,24 @@ import {
 import Nav from './components/nav/Nav';
 import HomePage from './containers/homePage/HomePage';
 import LandingPage from './containers/landingPage/LandingPage';
+import MembersPage from './containers/membersPage/MembersPage';
 import './style.scss';
+
+const FallBack = () => {
+  <div>
+    Error 404: Invalid Route
+  </div>;
+};
 
 const App = () => (
   <Router>
     <Nav />
     <div id="contentsContainer">
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        {/* <Route path="/about" component={About} />
-        <Route exact path="/test/:id" component={Test} />
-        <Route component={FallBack} /> */}
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/home" component={HomePage} />
+        <Route exact path="/people" component={MembersPage} />
+        <Route component={FallBack} />
       </Switch>
     </div>
   </Router>

@@ -3,6 +3,8 @@
   flex-direction: row;
   padding:0.5em 0em;
   border-radius: 0.5em;
+  align-items: center;
+  justify-content: center;
 }
 
 #UserDisplayContainer:hover{
@@ -14,7 +16,6 @@
   align-items: center;
   display: flex;
   flex-direction:column;
-  font-weight: 700;
   width: 6em;
 }
 
@@ -22,5 +23,7 @@
   margin-top: 0.6em;
   font-size: 0.7em;
   text-align: center;
+  font-weight: 700;
+
 
 }
