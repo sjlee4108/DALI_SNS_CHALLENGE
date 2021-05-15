@@ -33,6 +33,7 @@ const NewPost = (props) => {
   const [text, setText] = useState('');
   const [url, setUrl] = useState([]);
   const [tag, setTag] = useState('');
+  const [error, setError] = useState(false);
 
   const addUrl = () => {
     setUrl([...url, '']);
@@ -51,7 +52,8 @@ const NewPost = (props) => {
   };
 
   const getallUrlBoxes = () => url.map((urlString, index) => (
-    <div id="urlTextContainer">
+    // eslint-disable-next-line react/no-array-index-key
+    <div id="urlTextContainer" key={index}>
       <div id="textFieldContainer">
         <TextField
           id="body"
@@ -80,6 +82,8 @@ const NewPost = (props) => {
         rows={3}
         margin="dense"
         fullWidth
+        error={error}
+        helperText={error ? 'Cannot post an empty post!' : null}
       />
 
       {getallUrlBoxes()}
@@ -110,13 +114,23 @@ const NewPost = (props) => {
         </FormControl>
         <GreenButton variant="contained"
           onClick={() => {
-            const newPost = {
-              user: 'Dummy', year: 'dummy', userImg: '', body: text, tag, imgUrl: url.filter((urlString) => urlString.length > 0),
-            };
-            props.handleNewPost(newPost);
-            setText('');
-            setUrl([]);
-            setTag('');
+            if (text.length !== 0 && props.user) {
+              const newPost = {
+                user: props.user.name,
+                year: props.user.year,
+                color: props.user.color,
+                body: text,
+                tag,
+                imgUrl: url.filter((urlString) => urlString.length > 0),
+              };
+              props.handleNewPost(newPost);
+              setText('');
+              setUrl([]);
+              setTag('');
+              setError(false);
+            } else {
+              setError(true);
+            }
           }}
         >Post
         </GreenButton>

@@ -58,6 +58,7 @@
     "axios": "^0.21.1",
     "date-fns": "^2.21.3",
     "firebase": "^8.6.1",
+    "immutable": "*",
     "jquery": "^3.6.0",
     "lodash.debounce": "^4.0.8",
     "prop-types": "^15.7.2",

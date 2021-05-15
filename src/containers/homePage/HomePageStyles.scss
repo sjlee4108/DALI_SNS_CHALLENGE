@@ -10,7 +10,7 @@
   overflow-y: scroll;
   box-sizing: border-box;
   padding-top: 1em;
-  background-color: rgb(237, 237, 237);
+  background-color: rgb(242, 242, 242);
   padding-bottom: 2em;
 
 }
@@ -19,7 +19,7 @@
 
 #postSectionContainer{
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   width:calc(100% - 19em);
   align-items: center;
   justify-content: flex-start;

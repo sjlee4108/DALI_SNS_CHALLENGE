@@ -10,7 +10,7 @@ const GuardedRoute = (props) => {
     );
   }
   return (
-    <Redirect to="/login" />
+    <Redirect to="/signup" />
   );
 };
 

@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Map } from 'immutable';
+
 import NewPost from '../../components/newPost/NewPost';
 import Post from '../../components/post/Post';
 import UserDisplay from '../../components/userDisplay/UserDisplay';
-import { addPost } from '../../store/actions';
+import {
+  addPost, fetchPosts, fetchUserData, fetchUsers,
+} from '../../store/actions';
 
 import './HomePageStyles.scss';
+import { useAuth } from '../../firebase/AuthContext';
 
-const getPosts = (posts) => posts.map((post, index) => (
-  <Post name={post.user}
-    year={post.year}
-    userImg={post.userImg}
-    body={post.body}
-    tag={post.tag}
-    imgUrl={post.imgUrl}
-    // eslint-disable-next-line react/no-array-index-key
-    key={index}
+const getPosts = (posts) => Map(posts).entrySeq().map(([key, value]) => (
+  <Post name={value.user}
+    year={value.year}
+    color={value.color}
+    body={value.body}
+    tag={value.tag}
+    imgUrl={value.imgUrl ? value.imgUrl : []}
+    key={key}
   />
 ));
 
-const getPostSection = (posts, handleNewPost) => (
+const getPostSection = (posts, handleNewPost, user) => (
   <div id="postSectionContainer">
-    <NewPost handleNewPost={handleNewPost} />
     {getPosts(posts)}
+    <NewPost handleNewPost={handleNewPost} user={user} />
   </div>
 );
 
@@ -54,29 +58,42 @@ const getRandomMembers = (users) => getRandom(users, 4).map((user, index) => (
     key={index}
   />
 ));
-const getFriendsSection = (users) => (
+
+const getFriendsSection = (users, user) => (
   <div id="friendsContainer">
-    <UserDisplay quote="yolo" src="" name="Lizzy Pale" />
+    {user ? (<UserDisplay quote={user.quote} src="" name={user.name} color={user.color} />) : null}
 
     <div id="friendDivider">
       <span>Check New Friends</span>
       <span>See All</span>
     </div>
-    {getRandomMembers(users)}
+    {users ? getRandomMembers(users) : null}
   </div>
 );
-const HomePage = (props) => (
-  <div id="topLevelContainer">
-    {getPostSection(props.posts, props.addPost)}
-    {getFriendsSection(props.users)}
-  </div>
-);
+
+const HomePage = (props) => {
+  const { currentUser } = useAuth();
+  useEffect(() => {
+    props.fetchPosts();
+    props.fetchUserData(currentUser.uid);
+    props.fetchUsers();
+  }, []);
+  return (
+    <div id="topLevelContainer">
+      {getPostSection(props.posts, props.addPost, props.user)}
+      {getFriendsSection(props.users, props.user)}
+    </div>
+  );
+};
 
 const mapStateToProps = (state) => (
   {
     posts: state.posts.all,
     users: state.users.all,
+    user: state.users.user,
   }
 );
 
-export default connect(mapStateToProps, { addPost })(HomePage);
+export default connect(mapStateToProps, {
+  addPost, fetchPosts, fetchUserData, fetchUsers,
+})(HomePage);

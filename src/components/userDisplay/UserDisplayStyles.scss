@@ -1,4 +1,4 @@
-#UserDisplayContainer{
+.UserDisplayContainer{
   display: flex;
   flex-direction: row;
   padding:0.5em 0em;
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-#UserDisplayContainer:hover{
+.UserDisplayContainer:hover{
   background-color: #dcdcdc;
   cursor: pointer;
 }

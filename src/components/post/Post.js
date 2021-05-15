@@ -8,7 +8,7 @@ import './PostStyles.scss';
 const Post = (props) => (
   <div id="postContainer">
     <div id="userInfo">
-      <Image usage="profile" alt={props.name} src={props.userImg} />
+      <Image usage="profile" alt={props.name} src={props.userImg} color={props.color} />
       <div id="userDescription">
         <span id="name">{props.name}</span>
         <span id="subSection">{`Class of 20${props.year}`}</span>

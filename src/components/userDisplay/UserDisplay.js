@@ -5,14 +5,12 @@ import Quote from '../quote/Quote';
 import './UserDisplayStyles.scss';
 
 const UserDisplay = (props) => (
-  <NavLink className="removeDefaultStyle" to={`/people/${props.name}`}>
-    <div id="UserDisplayContainer">
-      <div id="nameImageSection">
-        <Image usage="profile" size="40" src={props.src ? props.src : ''} alt={props.name} />
-        <div id="userDisplayname">{props.name}</div>
-      </div>
-      <Quote value={props.quote} color={props.color} />
+  <NavLink className="removeDefaultStyle UserDisplayContainer" to={`/people/${props.name}`}>
+    <div id="nameImageSection">
+      <Image usage="profile" size="40" src={props.src ? props.src : ''} alt={props.name} color={props.color} />
+      <div id="userDisplayname">{props.name}</div>
     </div>
+    <Quote value={props.quote} color={props.color} />
   </NavLink>
 );
 
