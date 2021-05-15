@@ -41,7 +41,7 @@ const MembersPage = (props) => (
 
 const mapStateToProps = (state) => (
   {
-    users: state.users,
+    users: state.users.all,
   }
 );
 

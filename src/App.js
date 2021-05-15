@@ -7,13 +7,15 @@ import Nav from './components/nav/Nav';
 import HomePage from './containers/homePage/HomePage';
 import LandingPage from './containers/landingPage/LandingPage';
 import MembersPage from './containers/membersPage/MembersPage';
+import ProfilePage from './containers/profilePage/ProfilePage';
+
 import './style.scss';
 
-const FallBack = () => {
+const FallBack = () => (
   <div>
     Error 404: Invalid Route
-  </div>;
-};
+  </div>
+);
 
 const App = () => (
   <Router>
@@ -23,6 +25,7 @@ const App = () => (
         <Route exact path="/" component={LandingPage} />
         <Route path="/home" component={HomePage} />
         <Route exact path="/people" component={MembersPage} />
+        <Route exact path="/people/:userName" component={ProfilePage} />
         <Route component={FallBack} />
       </Switch>
     </div>

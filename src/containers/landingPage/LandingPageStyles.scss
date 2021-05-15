@@ -1,9 +1,11 @@
 #backgroundContainer{
   width:100%;
+  height:100%;
   background: url(http://www.dartmouth.edu/~alfund/images/2015/8/1600.jpg) no-repeat center center fixed; 
   background-size: cover;
   filter: grayscale(40%);
   animation: backgroundChange 15s infinite;
+  animation-delay: 3s;
 }
 
 @keyframes backgroundChange{
@@ -33,9 +35,15 @@
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: #597167b0;
+  overflow-y: scroll;
   height: 100%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
+#topContainer::-webkit-scrollbar {
+  display: none;
+}
 
 
 #featuresContainer{

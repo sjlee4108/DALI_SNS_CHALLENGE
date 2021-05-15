@@ -75,7 +75,7 @@ const HomePage = (props) => (
 const mapStateToProps = (state) => (
   {
     posts: state.posts.all,
-    users: state.users,
+    users: state.users.all,
   }
 );
 
