@@ -27,27 +27,24 @@ const getTopSection = (quote, name, image, color) => (
   </div>
 );
 
-const getAboutMeSection = (gender, bday, home) => {
-  console.log(`${ROOT_URL}${API_KEY}&size=400,200&zoom=10&locations=${home.replace(/\s&\s/g, '||').replace(/,\s+/g, ',').replace(/\s/g, '+')}`);
-  return (
-    <div className="profileBox">
-      <h2>General</h2>
-      <div className="profileGrid">
-        <div className="profileRow"><WcIcon /><h3>Gender</h3></div>
-        <h4>{gender}</h4>
-        <div className="profileRow"><CakeIcon /><h3>Birthday</h3></div>
-        <h4>{bday}</h4>
-        <div className="profileRow"><HomeIcon /><h3>Home</h3></div>
-        <h4>{home}</h4>
-      </div>
-      <img id="mapImage"
-        src={`${ROOT_URL}${API_KEY}
-      &size=400,200&locations=${home.replace(/[&]/g, '||')}`}
-        alt=""
-      />
+const getAboutMeSection = (gender, bday, home) => (
+  <div className="profileBox">
+    <h2>General</h2>
+    <div className="profileGrid">
+      <div className="profileRow"><WcIcon /><h3>Gender</h3></div>
+      <h4>{gender}</h4>
+      <div className="profileRow"><CakeIcon /><h3>Birthday</h3></div>
+      <h4>{bday}</h4>
+      <div className="profileRow"><HomeIcon /><h3>Home</h3></div>
+      <h4>{home}</h4>
     </div>
-  );
-};
+    <img id="mapImage"
+      src={`${ROOT_URL}${API_KEY}
+      &size=400,200&locations=${home.replace(/[&]/g, '||')}`}
+      alt=""
+    />
+  </div>
+);
 
 const getEducationSection = (year, major, role) => (
   <div className="profileBox">
@@ -96,7 +93,6 @@ const ProfilePage = (props) => {
     }
 
     [user] = user;
-    console.log(user);
     return (
       <div id="profileTopContainer">
         {getTopSection(user.quote, user.name, user.picture, user.favoriteColor)}

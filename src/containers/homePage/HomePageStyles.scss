@@ -58,4 +58,12 @@
   flex-direction: row;
   justify-content: space-between;
 
+  a{
+    color:green;
+    text-decoration: none;
+  }
+  a:hover{
+    color:rgb(0, 187, 0);
+  }
+
 }

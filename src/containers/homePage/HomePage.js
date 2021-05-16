@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Map } from 'immutable';
+import { OrderedMap } from 'immutable';
 
+import { NavLink } from 'react-router-dom';
 import NewPost from '../../components/newPost/NewPost';
 import Post from '../../components/post/Post';
 import UserDisplay from '../../components/userDisplay/UserDisplay';
+
 import {
   addPost, fetchPosts, fetchUserData, fetchUsers,
 } from '../../store/actions';
@@ -12,7 +14,7 @@ import {
 import './HomePageStyles.scss';
 import { useAuth } from '../../firebase/AuthContext';
 
-const getPosts = (posts) => Map(posts).entrySeq().map(([key, value]) => (
+const getPosts = (posts) => OrderedMap(posts).entrySeq().map(([key, value]) => (
   <Post name={value.user}
     year={value.year}
     color={value.color}
@@ -65,7 +67,7 @@ const getFriendsSection = (users, user) => (
 
     <div id="friendDivider">
       <span>Check New Friends</span>
-      <span>See All</span>
+      <NavLink to="/people">See All</NavLink>
     </div>
     {users ? getRandomMembers(users) : null}
   </div>

@@ -64,3 +64,13 @@ nav{
   height:1.8em;
   margin-right: 0.6em;
 }
+
+
+@media only screen and (max-width: 500px) {
+  nav{
+    padding: 0em 0.3em 0em 0.5em;
+  }
+  li{
+    font-size: 1em !important;
+  }
+}

@@ -7,6 +7,11 @@ import {
 import DateFnsUtils from '@date-io/date-fns';
 import './NewAccountStyles.scss';
 import { connect } from 'react-redux';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import { useAuth } from '../../firebase/AuthContext';
 import { addUser } from '../../store/actions';
@@ -38,6 +43,32 @@ const NewAccount = (props) => {
   const [inputValidate, setInputValidate] = useState(false);
   const { signup } = useAuth();
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const getAlertDialog = () => (
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">Account Creation Failed</DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          Please try again with a different email.
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose} color="primary" autoFocus>
+          OK
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
 
   const handleChange = (e, type) => {
     if (type === 'email') {
@@ -98,7 +129,7 @@ const NewAccount = (props) => {
           year, quote, birthday: selectedDate, name, color,
         });
       } catch (error) {
-        alert(error);
+        setOpen(true);
         setLoading(false);
       }
     } else {
@@ -108,6 +139,7 @@ const NewAccount = (props) => {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
+      {getAlertDialog()}
       <div id="form">
         <div id="formTop">
           <h3>Join us now!</h3>

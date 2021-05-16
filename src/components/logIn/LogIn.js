@@ -1,13 +1,13 @@
 import { makeStyles, TextField, Button } from '@material-ui/core';
 import React, { useState } from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import './LogInStyles.scss';
 import { useAuth } from '../../firebase/AuthContext';
-
-// import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
-
-// import { createPost } from '../actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +25,32 @@ const LogIn = () => {
   const [inputValidate, setInputValidate] = useState(false);
   const { login } = useAuth();
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const getAlertDialog = () => (
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle id="alert-dialog-title">Log In Failed</DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          Invalid username and/or password. Please try again.
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleClose} color="primary" autoFocus>
+          OK
+        </Button>
+      </DialogActions>
+    </Dialog>
+  );
 
   const handleChange = (e, type) => {
     if (type === 'email') {
@@ -52,7 +78,7 @@ const LogIn = () => {
         setLoading(true);
         await login(email, password);
       } catch (error) {
-        alert(error);
+        setOpen(true);
         setLoading(false);
       }
     } else {
@@ -62,6 +88,7 @@ const LogIn = () => {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
+      {getAlertDialog()}
       <div id="form">
         <div id="formTop">
           <h3>Welcome Back! Sign in here</h3>
