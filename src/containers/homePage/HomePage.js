@@ -48,14 +48,14 @@ const getRandom = (arr, n) => {
   return result;
 };
 
-const getRandomMembers = (users) => getRandom(users, 4).map((user, index) => (
+const getRandomMembers = (users) => getRandom(users, 4).map((user) => (
   <UserDisplay
     name={user.name}
     quote={user.quote}
     src={user.picture}
     color={user.favoriteColor}
-    // eslint-disable-next-line react/no-array-index-key
-    key={index}
+    hasProfile
+    key={user.name}
   />
 ));
 

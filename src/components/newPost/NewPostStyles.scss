@@ -1,5 +1,6 @@
 #newPostContainer{
-  width:30em;
+  max-width:30em;
+  width: 100%;
   box-sizing: border-box;
   background-color: white;
   display:flex;
@@ -18,6 +19,7 @@
 
 #urlTextContainer{
   width:19em;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,6 +28,7 @@
 
 #textFieldContainer{
   width: 16em;
+  max-width: calc(100% - 3em);
 }
 
 

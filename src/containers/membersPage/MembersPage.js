@@ -26,6 +26,7 @@ const getMembers = (users) => users.sort(
         src={user.picture}
         color={user.favoriteColor}
         key={user.name}
+        hasProfile
       />
     </React.Fragment>
   );
