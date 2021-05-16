@@ -11,7 +11,7 @@
 
 Landing Page is the first page of the platform. It allows users to creat their accounts by filling out a simple form with a simple input validation. Google Auth is used to create an account.
 
-![](./screeshots/landingPage.png)
+![](./screenshots/landingpage.png)
 
 ![](./screenshots/valid_input.png)
 
@@ -19,7 +19,7 @@ Landing Page is the first page of the platform. It allows users to creat their a
 
 Simple log in page for a user with an account.
 
-![](./screeshots/login.png)
+![](./screenshots/login.png)
 
 ![](./screenshots/fail_login.png)
 
@@ -27,7 +27,7 @@ Simple log in page for a user with an account.
 
 Homepage is the landing page for users that logged in to their account. In the center, it shows recent 20 posts stored in Firebase. 
 
-![](./screeshots/homePage.png)
+![](./screenshots/homePage.png)
 
 
 On the right, it shows the user's info (name, avatar, quote in their fav color). It also shows DALI members to check out, which is randomly chosen from the members list.
@@ -50,9 +50,9 @@ Users can also create a post with or without images. Users can also choose a tag
 
 This page shows a list of DALI members. The list was retrieved from github page using axios. The list is sorted by class year and alphabetical order. Users can click a member to go to their profile page. 
 
-![](./screenshots/full_members.ong)
+![](./screenshots/full_members.png)
 
-![](./screenshots/full_members2.ong)
+![](./screenshots/full_members2.png)
 
 ## Profile Page
 
